@@ -16,9 +16,9 @@ public class RevisarDatos {
     public JPanel verPasatiempos;
     private JTextArea DatosBase;
     public void cargarDatos() {
-        String connectionString = "tu_connection_string";
+        String connectionString = "conectar_tu_base";
         try (MongoClient mongoClient = MongoClients.create(connectionString)) {
-            MongoDatabase database = mongoClient.getDatabase("nombre_base_de_datos");
+            MongoDatabase database = mongoClient.getDatabase("nombre_mibaase");
             MongoCollection<Document> collection = database.getCollection("nombre_coleccion");
             FindIterable<Document> documents = collection.find();
             for (Document doc : documents) {
